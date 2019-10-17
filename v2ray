@@ -4,7 +4,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #Check Root
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
-echo "欢迎使用 v2ray_func 管理程序 By: Masteen"
+echo "欢迎使用 V2ray.fun 管理程序 By: Masteen"
 echo ""
 echo "1.服务管理"
 echo "2.更改配置"
@@ -44,8 +44,8 @@ if [[ ${choice} == 1 ]]; then
     done
     if [[ ${schoice} == 1 ]]; then
         service v2ray start
-        python /usr/local/v2ray_func/openport.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/openport.py
+        python /usr/local/v2ray.fun/genclient.py
         echo "服务启动成功！"
         bash /usr/local/bin/v2ray
     fi
@@ -56,8 +56,8 @@ if [[ ${choice} == 1 ]]; then
     fi
     if [[ ${schoice} == 3 ]]; then
         service v2ray restart
-        python /usr/local/v2ray_func/openport.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/openport.py
+        python /usr/local/v2ray.fun/genclient.py
         echo "服务已重启！"
         bash /usr/local/bin/v2ray
     fi
@@ -97,8 +97,8 @@ if [[ ${choice} == 2 ]]; then
     done
     
     if [[ ${changechoice} == 1 ]]; then
-        python /usr/local/v2ray_func/changeuuid.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/changeuuid.py
+        python /usr/local/v2ray.fun/genclient.py
 	    service v2ray restart
         echo ""
         echo "UUID修改成功！"
@@ -106,9 +106,9 @@ if [[ ${choice} == 2 ]]; then
     fi
     
     if [[ ${changechoice} == 2 ]]; then
-        python /usr/local/v2ray_func/changeport.py
-        python /usr/local/v2ray_func/genclient.py
-        python /usr/local/v2ray_func/openport.py
+        python /usr/local/v2ray.fun/changeport.py
+        python /usr/local/v2ray.fun/genclient.py
+        python /usr/local/v2ray.fun/openport.py
 	    service v2ray restart
         echo ""
         echo "端口修改成功！"
@@ -116,8 +116,8 @@ if [[ ${choice} == 2 ]]; then
     fi
     
     if [[ ${changechoice} == 3 ]]; then
-        python /usr/local/v2ray_func/changesecurity.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/changesecurity.py
+        python /usr/local/v2ray.fun/genclient.py
 	    service v2ray restart
         echo ""
         echo "加密方式修改成功！"
@@ -125,8 +125,8 @@ if [[ ${choice} == 2 ]]; then
     fi
     
     if [[ ${changechoice} == 4 ]]; then
-        python /usr/local/v2ray_func/changestream.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/changestream.py
+        python /usr/local/v2ray.fun/genclient.py
 	    service v2ray restart
         echo ""
         echo "传输模式修改成功！"
@@ -134,8 +134,8 @@ if [[ ${choice} == 2 ]]; then
     fi
     
     if [[ ${changechoice} == 5 ]]; then
-        python /usr/local/v2ray_func/changetls.py
-        python /usr/local/v2ray_func/genclient.py
+        python /usr/local/v2ray.fun/changetls.py
+        python /usr/local/v2ray.fun/genclient.py
 	    service v2ray restart
         echo ""
         echo "TLS设置修改成功！"
@@ -144,13 +144,13 @@ if [[ ${choice} == 2 ]]; then
 fi
 
 if [[ ${choice} == 3 ]]; then
-    python /usr/local/v2ray_func/serverinfo.py
+    python /usr/local/v2ray.fun/serverinfo.py
     bash /usr/local/bin/v2ray
 fi
 
 if [[ ${choice} == 4 ]]; then
     echo "请选择文件保存位置（此功能仅限Xshell使用）"
-    python /usr/local/v2ray_func/genclient.py
+    python /usr/local/v2ray.fun/genclient.py
     sz /root/config.json
     echo "保存成功！"
     echo ""
