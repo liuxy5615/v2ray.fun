@@ -47,7 +47,7 @@ else:
         writejson.WriteSecurity("aes-256-cfb")
     elif(newsecurity=="4"):
         writejson.WriteSecurity("aes-256-gcm")
-	elif(newsecurity=="5"):
+    elif(newsecurity=="5"):
         writejson.WriteSecurity("chacha20")
     elif(newsecurity=="6"):
         writejson.WriteSecurity("chacha20-ietf")
