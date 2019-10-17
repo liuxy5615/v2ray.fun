@@ -25,8 +25,14 @@ print ("当前加密方式为：%s") % str(readjson.ConfSecurity)
 print ("请选择新的加密方式：")
 print ("1.aes-128-cfb")
 print ("2.aes-128-gcm")
-print ("3.chacha20-poly1305")
-print ("4.none")
+print ("3.aes-256-cfb")
+print ("4.aes-256-gcm")
+print ("5.chacha20")
+print ("6.chacha20-ietf")
+print ("7.chacha20-poly1305")
+print ("8.none")
+
+
 newsecurity=raw_input()
 
 if ( not is_number(newsecurity)):
@@ -38,8 +44,16 @@ else:
     elif(newsecurity=="2"):
         writejson.WriteSecurity("aes-128-gcm")
     elif(newsecurity=="3"):
-        writejson.WriteSecurity("chacha20-poly1305")
+        writejson.WriteSecurity("aes-256-cfb")
     elif(newsecurity=="4"):
+        writejson.WriteSecurity("aes-256-gcm")
+	elif(newsecurity=="5"):
+        writejson.WriteSecurity("chacha20")
+    elif(newsecurity=="6"):
+        writejson.WriteSecurity("chacha20-ietf")
+    elif(newsecurity=="7"):
+        writejson.WriteSecurity("chacha20-poly1305")			
+    elif(newsecurity=="8"):
         writejson.WriteSecurity("none")
     else:
-        print("请输入1-4之间的数字！")
+        print("请输入1-8之间的数字！")
